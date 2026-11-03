@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aula Lumi · Profesora virtual con IA</title>
+<meta name="description" content="Profesora virtual con IA que explica en una pizarra, habla y escucha. Funciona con Gemini.">
+<meta name="theme-color" content="#fff0f7">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Aula Lumi">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Figtree:wght@400;600;700&family=Fredoka:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/ui.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/tools.css">
+<link rel="stylesheet" href="css/teach.css">
+<link rel="stylesheet" href="css/teach2.css">
+<link rel="stylesheet" href="css/teach3.css">
+<link rel="stylesheet" href="css/teach4.css">
+<link rel="stylesheet" href="css/teach5.css">
+<link rel="stylesheet" href="css/teach6.css">
+<link rel="stylesheet" href="css/teach7.css">
+<link rel="stylesheet" href="css/teach8.css">
+<link rel="stylesheet" href="css/teach10.css">
+<link rel="stylesheet" href="css/teach11.css">
+<link rel="stylesheet" href="css/teach12.css">
+<link rel="stylesheet" href="css/teach13.css">
+<link rel="stylesheet" href="css/teach14.css">
+<link rel="stylesheet" href="css/teach15.css">
+<link rel="stylesheet" href="css/themefx.css">
+<link rel="stylesheet" href="css/classfx.css">
+<link rel="stylesheet" href="css/themetalk.css">
+<link rel="stylesheet" href="css/player.css">
+<link rel="stylesheet" href="css/holo.css">
+<link rel="stylesheet" href="css/sync.css">
+<link rel="stylesheet" href="css/board2.css">
+<link rel="stylesheet" href="css/beat.css">
+<link rel="stylesheet" href="css/lumi2.css">
+<link rel="stylesheet" href="css/party.css">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.176.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.176.0/examples/jsm/"}}</script>
+<script defer src="js/store.js"></script>
+<script defer src="js/bond.js"></script>
+<script defer src="js/mathfix.js"></script>
+<script defer src="js/theme.js"></script>
+<script defer src="js/gemini.js"></script>
+<script defer src="js/board.js"></script>
+<script defer src="js/looks.js"></script>
+<script defer src="js/avatar.js"></script>
+<script defer src="js/voice.js"></script>
+<script defer src="js/shop.js"></script>
+<script type="module" src="js/viz3d.js"></script>
+<script defer src="js/export.js"></script>
+<script defer src="js/layout.js"></script>
+<script defer src="js/teach.js"></script>
+<script defer src="js/teach2.js"></script>
+<script defer src="js/teach3.js"></script>
+<script defer src="js/teach4.js"></script>
+<script defer src="js/teach5.js"></script>
+<script defer src="js/teach6.js"></script>
+<script defer src="js/teach7.js"></script>
+<script defer src="js/teach8.js"></script>
+<script defer src="js/teach9.js"></script>
+<script defer src="js/teach10.js"></script>
+<script defer src="js/teach11.js"></script>
+<script defer src="js/teach12.js"></script>
+<script defer src="js/teach13.js"></script>
+<script defer src="js/teach14.js"></script>
+<script defer src="js/teach15.js"></script>
+<script defer src="js/themefx.js"></script>
+<script defer src="js/classfx.js"></script>
+<script defer src="js/themetalk.js"></script>
+<script defer src="js/player.js"></script>
+<script defer src="js/beat.js"></script>
+<script defer src="js/tools.js"></script>
+<script defer src="js/tools2.js"></script>
+<script type="module" src="js/graf3d.js"></script>
+<script type="module" src="js/holo.js"></script>
+<script defer src="js/sync.js"></script>
+<script defer src="js/app.js"></script>
+<script defer src="js/party.js"></script>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></symbol>
+<symbol id="i-stop" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/></symbol>
+<symbol id="i-down" viewBox="0 0 24 24"><path d="M12 3v12m0 0 4-4m-4 4-4-4"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></symbol>
+<symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4zM3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></symbol>
+<symbol id="i-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".7"/><circle cx="17.5" cy="10.5" r=".7"/><circle cx="8.5" cy="7.5" r=".7"/><circle cx="6.5" cy="12.5" r=".7"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.9 0 1.6-.7 1.6-1.6 0-.4-.2-.8-.4-1.1-.3-.3-.4-.7-.4-1.1 0-.9.7-1.6 1.6-1.6H16c3.3 0 6-2.7 6-6 0-4.9-4.5-9-10-9z"/></symbol>
+<symbol id="i-expand" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></symbol>
+<symbol id="i-shrink" viewBox="0 0 24 24"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6"/></symbol>
+<symbol id="i-mic" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2M12 19v3"/></symbol>
+<symbol id="i-cam" viewBox="0 0 24 24"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3z"/><circle cx="12" cy="13" r="3"/></symbol>
+<symbol id="i-send" viewBox="0 0 24 24"><path d="m22 2-7 20-4-9-9-4z"/><path d="M22 2 11 13"/></symbol>
+<symbol id="i-install" viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 7v7m0 0 3-3m-3 3-3-3M10 18h4"/></symbol>
+<symbol id="i-layout" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 3v18M9 9h12"/></symbol>
+<symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+<symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M9 7h6M9 11h4"/></symbol>
+</defs></svg>
+<div class="app">
+  <aside class="stage">
+    <div id="avatar"></div>
+    <div class="info">
+      <b>Prof. Lumi</b>
+      <span id="status">Lista para enseñarte</span>
+      <p id="subtitle" aria-live="polite"></p>
+      <div id="bond" aria-live="polite"></div>
+    </div>
+    <div class="tips" aria-hidden="true">
+      <div><b>Tip:</b> toca a Lumi, a su estrellita… ¡o mantén presionada su cabeza!</div>
+      <div><b>Tip:</b> sube una foto de tu tarea y ella la explica</div>
+      <div><b>Tip:</b> cambia el tema con el icono de la paleta</div>
+    </div>
+  </aside>
+  <main class="classroom">
+    <header class="topbar">
+      <div class="grp">
+        <button id="newClass" class="tb" type="button" title="Nuevo chat (empieza de cero)"><svg class="ic" aria-hidden="true"><use href="#i-plus"/></svg><span>Nuevo chat</span></button>
+        <button id="hand" class="tb main" type="button" title="Tengo una duda"><svg class="ic" aria-hidden="true"><use href="#i-help"/></svg><span>Tengo una duda</span></button>
+        <button id="stop" class="tb danger" type="button" title="Parar" hidden><svg class="ic" aria-hidden="true"><use href="#i-stop"/></svg><span>Parar</span></button>
+      </div>
+      <div class="grp util">
+        <button id="installBtn" class="tb" type="button" title="Instalar como app" aria-label="Instalar como app" hidden><svg class="ic" aria-hidden="true"><use href="#i-install"/></svg></button>
+        <button id="classesBtn" class="tb" type="button" title="Mis chats (retómalos o repásalos sin internet)" aria-label="Mis chats"><svg class="ic" aria-hidden="true"><use href="#i-book"/></svg></button>
+        <button id="exportBtn" class="tb" type="button" title="Exportar" aria-label="Exportar"><svg class="ic" aria-hidden="true"><use href="#i-down"/></svg></button>
+        <button id="mpBtn" class="tb" type="button" title="Música y videos" aria-label="Música y videos" aria-pressed="false"><svg class="ic" aria-hidden="true"><use href="#i-music"/></svg></button>
+        <button id="shopBtn" class="tb" type="button" title="Tienda" aria-label="Tienda"><svg class="ic" aria-hidden="true"><use href="#i-bag"/></svg><b id="coinBadge" class="badge">0</b></button>
+        <button id="layoutBtn" class="tb" type="button" title="Diseño" aria-label="Diseño: ubicación y tamaños"><svg class="ic" aria-hidden="true"><use href="#i-layout"/></svg></button>
+        <button id="themeBtn" class="tb" type="button" title="Tema" aria-label="Elegir tema"><svg class="ic" aria-hidden="true"><use href="#i-palette"/></svg></button>
+        <button id="fsBtn" class="tb" type="button" title="Pantalla completa" aria-label="Pantalla completa"><svg class="ic" aria-hidden="true"><use href="#i-expand"/></svg></button>
+        <button id="openSettings" class="tb" type="button" title="Ajustes" aria-label="Ajustes"><svg class="ic" aria-hidden="true"><use href="#i-gear"/></svg></button>
+      </div>
+    </header>
+    <div id="board" role="log" aria-label="Pizarra">
+      <div id="empty"><h2>¿Qué quieres aprender hoy?</h2><div class="chips" id="chips"></div></div>
+      <div id="sheet"></div>
+    </div>
+    <div class="tray" aria-hidden="true"><i class="c1"></i><i class="c2"></i><i class="er"></i></div>
+    <div id="chatBar" class="chatbar" hidden><span id="chatTitle"></span><button id="chatNew" type="button" title="Empezar un chat nuevo">Nuevo</button></div>
+    <div id="photoStrip" class="photostrip" hidden></div>
+    <form id="form" autocomplete="off">
+      <input id="photo" type="file" accept="image/*" multiple hidden>
+      <button id="mic" class="ib" type="button" title="Hablar" aria-label="Hablar"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg><span class="lbl">Hablar</span></button>
+      <button id="photoBtn" class="ib" type="button" title="Subir una foto" aria-label="Subir una foto"><svg class="ic" aria-hidden="true"><use href="#i-cam"/></svg><span class="lbl">Foto</span></button>
+      <input id="q" placeholder="Escribe tu pregunta o sube una foto…" aria-label="Tu pregunta" enterkeyhint="send">
+      <button id="go" class="ib send" type="submit" aria-label="Enviar"><svg class="ic" aria-hidden="true"><use href="#i-send"/></svg><span class="lbl">Enviar</span></button>
+    </form>
+  </main>
+</div>
+
+<dialog id="settings">
+  <form method="dialog" id="sform">
+    <h3>Ajustes</h3>
+    <p id="sNote" class="hint">Tu API key se guarda solo en este dispositivo.</p>
+    <label for="sProv">Servicio de IA</label>
+    <select id="sProv"></select>
+    <p id="sProvHint" class="hint"></p>
+    <label for="sKey">API key <a id="sKeyLink" href="#" target="_blank" rel="noopener" style="font-weight:400;font-size:13px">consíguela aquí</a></label>
+    <input id="sKey" type="password" autocomplete="off" placeholder="Pega tu key…">
+    <div id="sBaseWrap" hidden><label for="sBase">Dirección del servicio (URL base)</label><input id="sBase" inputmode="url" autocomplete="off" placeholder="https://…/v1"></div>
+    <label for="sModelSel">Modelo</label>
+    <div style="display:flex;gap:8px"><select id="sModelSel" style="flex:1;min-width:0"></select><button type="button" id="sLoad">Cargar modelos</button></div>
+    <input id="sModel" autocomplete="off" placeholder="…o escribe el nombre del modelo" style="margin-top:6px">
+    <p id="sTest" class="hint" aria-live="polite"></p>
+    <label for="sLevel">Nivel del alumno</label>
+    <select id="sLevel"><option value="primaria">Primaria</option><option value="secundaria">Secundaria</option><option value="bachillerato">Bachillerato</option><option value="universidad">Universidad</option></select>
+    <p id="sLevelHint" class="hint" aria-live="polite"></p>
+    <label><input id="sVoice" type="checkbox"> Que la profesora hable en voz alta</label>
+    <label><input id="sSpot" type="checkbox"> Resaltar con un brillito ✨ lo que Lumi está explicando</label>
+    <label><input id="sTfx" type="checkbox"> Detalles y gestos de Lumi según el tema 🎀 (sin gasto de créditos; apágalo si el celular va lento)</label>
+    <label for="sVName">Voz</label>
+    <select id="sVName"></select>
+    <label for="sRate">Velocidad de la voz</label>
+    <input id="sRate" type="range" min="0.7" max="1.3" step="0.05">
+    <label for="sPitch">Tono de la voz</label>
+    <input id="sPitch" type="range" min="0.8" max="1.4" step="0.05">
+    <button type="button" id="sVTest">🔊 Probar voz</button>
+    <div class="row">
+      <button type="button" id="wipe">Borrar memoria</button>
+      <button type="submit" id="save" class="primary">Guardar</button>
+    </div>
+  </form>
+</dialog>
+<dialog id="shopDlg">
+  <div class="shop-h"><h3>Tienda de Lumi</h3><span id="coins" class="coins"></span></div>
+  <div id="tabs" class="tabs"></div><div id="grid" class="grid"></div>
+  <div class="row"><span class="hint">Ganas 5 monedas por cada clase.</span><button type="button" id="shopClose" class="primary">Listo</button></div>
+</dialog>
+<dialog id="exportDlg">
+  <h3>Exportar la pizarra</h3>
+  <p class="hint" id="expNote">Guarda toda la pizarra tal como está ahora.</p>
+  <div class="expbtns"><button type="button" data-f="png">PNG</button><button type="button" data-f="jpg">JPG</button><button type="button" data-f="pdf">PDF</button></div>
+  <div class="row"><span></span><button type="button" id="expClose" class="primary">Cerrar</button></div>
+</dialog>
+<dialog id="installDlg">
+  <h3>Instala Lumi como app</h3>
+  <p class="hint" id="installNote"></p>
+  <ul class="steps" style="margin:10px 0 0;padding-left:20px;line-height:1.6">
+    <li><b>Android (Chrome):</b> menú ⋮ → «Instalar app» o «Añadir a la pantalla de inicio».</li>
+    <li><b>iPhone / iPad (Safari):</b> botón Compartir → «Añadir a pantalla de inicio».</li>
+    <li><b>Computador (Chrome / Edge):</b> icono de instalar en la barra de direcciones.</li>
+  </ul>
+  <p class="hint" style="margin-top:10px">Instalada abre a pantalla completa, sin barra del navegador, y funciona sin internet para repasar tus clases guardadas.</p>
+  <div class="row"><span></span><button type="button" id="installClose" class="primary">Entendido</button></div>
+</dialog>
+<dialog id="classesDlg">
+  <h3>Mis chats</h3>
+  <p class="hint">Toca un chat para <b>retomarlo con todo su contexto</b>. Se guardan en este dispositivo y puedes repasarlos <b>sin internet</b>.</p>
+  <div id="classList" style="display:flex;flex-direction:column;gap:8px;margin-top:12px;max-height:50vh;overflow:auto"></div>
+  <div class="row"><button type="button" id="classWipe">Borrar todas</button><button type="button" id="classClose" class="primary">Cerrar</button></div>
+</dialog>
+<dialog id="themeDlg">
+  <h3>Elige tu tema</h3>
+  <p class="hint">Cambia los colores, la pizarra y el fondo de Lumi.</p>
+  <div id="themeGrid" class="tgrid"></div>
+  <div class="row"><span></span><button type="button" id="themeClose" class="primary">Listo</button></div>
+</dialog>
+</body>
+</html>
